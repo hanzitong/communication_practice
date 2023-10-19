@@ -10,6 +10,7 @@ TCP, UDP, UART, I2C, SPI
     - $git clone 
     - $make 
     - $make install
+    - $ldconfig  [issue#450](https://github.com/joan2937/pigpio/issues/450)
 - GPIO manipulation, I2C communication etc.
 
 # gpiod library
