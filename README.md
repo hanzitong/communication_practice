@@ -17,3 +17,12 @@ TCP, UDP, UART, I2C, SPI
 - $apt install libgpiod-dev
 - only GPIO manipulation.
 
+
+test test 
+aaaaa
+bbbbb
+ccccc
+dddd
+eeeeee
+
+
