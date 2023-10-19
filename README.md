@@ -6,12 +6,12 @@ TCP, UDP, UART, I2C, SPI
 - UDP communication etc.
 
 # pigpio library
-- git@github.com:joan2937/pigpio.git
+- https://github.com/joan2937/pigpio
     - $git clone 
     - $make 
     - $make install
     - $ldconfig  [issue#450](https://github.com/joan2937/pigpio/issues/450)
-- GPIO manipulation, I2C communication etc.
+- I2C communication, GPIO manipulation, etc.
 
 # gpiod library
 - $apt install libgpiod-dev
