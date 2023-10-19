@@ -6,7 +6,7 @@ TCP, UDP, UART, I2C, SPI
 - UDP communication etc.
 
 # pigpio library
-- git clone git@github.com:joan2937/pigpio.git
+- https://github.com/joan2937/pigpio
     - $git clone 
     - $make 
     - $make install
