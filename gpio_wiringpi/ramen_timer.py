@@ -36,4 +36,15 @@ while True:
 
 
 
+while True:
+    if (pi.digitalRead(SW_PIN) == pi.LOW):
+        
+    else:
+        pi
+
+
+
+state 1: wait to set timer
+state 2: counting timer
+state 3: turn on buzzer and led blink
 
