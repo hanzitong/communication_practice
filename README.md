@@ -17,3 +17,6 @@ TCP, UDP, UART, I2C, SPI
 - $apt install libgpiod-dev
 - only GPIO manipulation.
 
+# WiringPi library
+- $pip install wiringpy
+- Python package.
