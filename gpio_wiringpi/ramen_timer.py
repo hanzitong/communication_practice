@@ -1,0 +1,39 @@
+
+#coding: utf-8
+
+import wiringpi as pi
+import time
+
+LED_PIN = 23
+SW_PIN = 24
+# BUZZER_PIN = 23
+
+
+pi.wiringPiSetupGpio()
+pi.pinMode(LED_PIN, pi.OUTPUT)
+pi.pinMode(SW_PIN, pi.INPUT)
+pi.pinMode(BUZZER_PIN, pi.OUTPUT)
+
+while True:
+    pi.digitalWrite(BUZZER_PIN, pi.HIGH)
+    time.sleep(0.5)
+    pi.digitalWrite(BUZZER_PIN, pi.LOW)
+    time.sleep(0.5)
+
+
+
+
+
+
+pi.pullUpDnControl(SW_PIN, pi.PUD_UP)
+
+while True:
+    if(pi.digitalRead(SW_PIN) == pi.LOW):
+        pi.digitalWrite(LED_PIN, pi.HIGH)
+    else:
+        pi.digitalWrite(LED_PIN, pi.LOW)
+    time.sleep(0.1)
+
+
+
+
