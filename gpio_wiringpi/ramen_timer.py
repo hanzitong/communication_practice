@@ -17,9 +17,7 @@ pi.pinMode(BUZZER_PIN, pi.OUTPUT)
 # pi.digitalWrite(BUZZER_PIN, pi.HIGH)
 # time.sleep(0.5)
 # pi.digitalWrite(BUZZER_PIN, pi.LOW)
-# time.sleep(0.5)
 
-# state = 1
 
 def is_sw_pushed():
     pin_state = pi.digitalRead(SW_PIN)
@@ -30,7 +28,7 @@ def is_sw_pushed():
 
 def waiting_input():
     while True:
-        if(is_sw_pushed): return True
+        if(is_sw_pushed()): return True
         time.sleep(0.1)
 
     return False
@@ -65,7 +63,7 @@ def main():
     return 0
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
 
 
