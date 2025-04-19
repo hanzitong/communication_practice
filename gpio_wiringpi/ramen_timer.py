@@ -1,21 +1,22 @@
 
 #coding: utf-8
 
+import sys
 import wiringpi as pi
 import time
 
-LED_PIN = 23
 SW_PIN = 24
 BUZZER_PIN = 23
+LED_PIN = 18
 
 pi.wiringPiSetupGpio()
 pi.pinMode(LED_PIN, pi.OUTPUT)
 pi.pinMode(SW_PIN, pi.INPUT)
 pi.pinMode(BUZZER_PIN, pi.OUTPUT)
 
-pi.digitalWrite(BUZZER_PIN, pi.HIGH)
+# pi.digitalWrite(BUZZER_PIN, pi.HIGH)
 # time.sleep(0.5)
-pi.digitalWrite(BUZZER_PIN, pi.LOW)
+# pi.digitalWrite(BUZZER_PIN, pi.LOW)
 # time.sleep(0.5)
 
 # state = 1
@@ -34,10 +35,10 @@ def waiting_input():
 
     return False
 
-# def state_running_timer():
 def timer_counting():
     elapsed_time = 0
-    while(elapsed_time < 180):
+    # while(elapsed_time < 180):
+    while(elapsed_time < 10):
         if (is_sw_pushed()): elapsed_time = 0
         time.sleep(1)
         elapsed_time += 1
@@ -64,6 +65,8 @@ def main():
     return 0
 
 
+if __name__ == "main":
+    main()
 
 
 
