@@ -13,8 +13,8 @@ LED_PIN = 18
 # pin setting
 pi.wiringPiSetupGpio()
 pi.pinMode(LED_PIN, pi.OUTPUT)
-pi.pinMode(SW_PIN, pi.INPUT)
 pi.pinMode(BUZZER_PIN, pi.OUTPUT)
+pi.pullUpDnControl(SW_PIN, pi.INPUT)
 
 # test
 pi.digitalWrite(BUZZER_PIN, pi.HIGH)
@@ -23,6 +23,9 @@ pi.digitalWrite(BUZZER_PIN, pi.LOW)
 
 
 def is_sw_pushed():
+    # if pi.digitalRead(SW_PIN) == pi.LOW:
+    #     time.sleep(0.05)
+    
     return pi.digitalRead(SW_PIN) == pi.LOW
 
 def waiting_input():
