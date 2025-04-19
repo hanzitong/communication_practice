@@ -14,9 +14,9 @@ pi.pinMode(LED_PIN, pi.OUTPUT)
 pi.pinMode(SW_PIN, pi.INPUT)
 pi.pinMode(BUZZER_PIN, pi.OUTPUT)
 
-# pi.digitalWrite(BUZZER_PIN, pi.HIGH)
-# time.sleep(0.5)
-# pi.digitalWrite(BUZZER_PIN, pi.LOW)
+pi.digitalWrite(BUZZER_PIN, pi.HIGH)
+time.sleep(0.5)
+pi.digitalWrite(BUZZER_PIN, pi.LOW)
 
 
 def is_sw_pushed():
@@ -38,7 +38,10 @@ def timer_counting():
     # while(elapsed_time < 180):
     while(elapsed_time < 10):
         if (is_sw_pushed()): elapsed_time = 0
-        time.sleep(1)
+        pi.digitalWrite(LED_PIN, pi.HIGH)
+        time.sleep(0.2)
+        pi.digitalWrite(LED_PIN, pi.HIGH)
+        time.sleep(0.8)
         elapsed_time += 1
 
     return True
