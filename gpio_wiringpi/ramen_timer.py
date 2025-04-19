@@ -1,9 +1,8 @@
-
 #coding: utf-8
 
 import sys
-import wiringpi as pi
 import time
+import wiringpi as pi
 
 # pin numbers
 SW_PIN = 24
@@ -19,15 +18,12 @@ pi.pinMode(BUZZER_PIN, pi.OUTPUT)
 pi.pullUpDnControl(SW_PIN, pi.INPUT)
 
 # test
-pi.digitalWrite(BUZZER_PIN, pi.HIGH)
-time.sleep(0.5)
-pi.digitalWrite(BUZZER_PIN, pi.LOW)
+# pi.digitalWrite(BUZZER_PIN, pi.HIGH)
+# time.sleep(0.5)
+# pi.digitalWrite(BUZZER_PIN, pi.LOW)
 
 
 def is_sw_pushed():
-    # if pi.digitalRead(SW_PIN) == pi.LOW:
-    #     time.sleep(0.05)
-    
     return pi.digitalRead(SW_PIN) == pi.LOW
 
 def waiting_input():
@@ -40,7 +36,6 @@ def waiting_input():
 
 def timer_counting(duration):
     elapsed_time = 1
-    # while(elapsed_time < 180):
     while(elapsed_time < duration):
         # if (is_sw_pushed()): elapsed_time = 0
         print("timer counting: {}".format(elapsed_time))
@@ -49,7 +44,6 @@ def timer_counting(duration):
         pi.digitalWrite(LED_PIN_W, pi.LOW)
         time.sleep(0.8)
         elapsed_time += 1
-
     pi.digitalWrite(LED_PIN_W, pi.LOW)
     return True
 
@@ -68,10 +62,9 @@ def calling_buzzer():
 
 def main():
     try:
-        # if(is_sw_pushed()):
         while True:
             waiting_input()
-            timer_counting(3)
+            timer_counting(180)
             calling_buzzer()
             time.sleep(1)
     except KeyboardInterrupt:
@@ -80,32 +73,5 @@ def main():
 
     return 0
 
-
 if __name__ == "__main__":
     main()
-
-
-
-# pi.pullUpDnControl(SW_PIN, pi.PUD_UP)
-
-# while True:
-#     if(pi.digitalRead(SW_PIN) == pi.LOW):
-#         pi.digitalWrite(LED_PIN, pi.HIGH)
-#     else:
-#         pi.digitalWrite(LED_PIN, pi.LOW)
-#     time.sleep(0.1)
-
-
-
-# while True:
-#     if (pi.digitalRead(SW_PIN) == pi.LOW):
-        
-#     else:
-#         pi
-
-
-
-# state 1: wait to set timer
-# state 2: counting timer
-# state 3: turn on buzzer and led blink
-
